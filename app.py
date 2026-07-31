@@ -19,7 +19,7 @@ def catalogo():
             imagen,
             stock
         FROM productos
-        WHERE activo = 1
+        WHERE disponible = 1
         ORDER BY id_producto DESC
     """)
     productos = cursor.fetchall()
