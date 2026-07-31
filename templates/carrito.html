@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block contenido %}
+<section class="carrito-container">
+    <h1>Mi Carrito</h1>
+    {% if productos %}
+        {% for producto in productos %}
+        <div class="item-carrito">
+            <div class="imagen">
+                <img src="{{ url_for('static', filename='img/' + producto.imagen) }}"
+                     alt="{{ producto.modelo }}">
+            </div>
+            <div class="info">
+                <h2>{{ producto.modelo }}</h2>
+                <p><strong>Marca:</strong> {{ producto.marca }}</p>
+                <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+                <div class="cantidad">
+                <a href="{{ url_for('disminuir_cantidad',
+                id_producto=producto.id_producto) }}"
+                class="btn-cantidad">−</a>
+                <span>{{ producto.cantidad }}</span>
+                <a href="{{ url_for('aumentar_cantidad',
+                id_producto=producto.id_producto) }}"
+                class="btn-cantidad">+</a>
+            </div>
+                <p><strong>Subtotal:</strong> ${{ producto.subtotal }}</p>
+            </div>
+            <div class="acciones">
+                <a href="{{ url_for('eliminar_carrito', id_producto=producto.id_producto) }}"
+                   class="boton">
+                    Eliminar
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="total-carrito">
+        <h2>Total: ${{ total }}</h2>
+        <div class="botones-carrito">
+        <a href="{{ url_for('catalogo') }}" class="boton">
+            Seguir comprando
+        </a>
+        <a href="{{ url_for('finalizar_compra') }}" class="btn-finalizar">
+        Finalizar compra
+        </a>
+    </div>
+    </div>
+        </div>
+    {% else %}
+        <h2 style="text-align:center;">🛒 Tu carrito está vacío.</h2>
+    {% endif %}
+</section>
+{% endblock %}

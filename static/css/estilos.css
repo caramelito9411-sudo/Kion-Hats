@@ -1,0 +1,277 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    background:#111;
+    color:white;
+}
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+.logo img{
+    height:70px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:35px;
+    font-weight:bold;
+    transition:.3s;
+}
+nav a:hover{
+    color:#C1121F;
+}
+main{
+    width:100%;
+    min-height:100vh;
+    padding-top:110px;
+}
+.hero{
+    height:100vh;
+    background:url("../img/fondo.jpg");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.60);
+}
+.contenidoHero{
+    position:relative;
+    z-index:10;
+    text-align:center;
+}
+.contenidoHero h1{
+    font-size:80px;
+    letter-spacing:5px;
+}
+.contenidoHero p{
+    margin-top:20px;
+    font-size:24px;
+}
+.boton{
+    display:inline-block;
+    margin-top:40px;
+    background:#C1121F;
+    color:white;
+    text-decoration:none;
+    padding:18px 45px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+.btn-finalizar{
+    display:inline-block;
+    margin-top:40px;
+    margin-left:15px;
+    background:#C1121F;
+    color:white;
+    text-decoration:none;
+    padding:18px 45px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-finalizar:hover{
+    background:#8B0E17;
+}
+.boton:hover{
+    background:#8B0000;
+    transform:scale(1.05);
+}
+.marcas{
+    padding:100px 80px;
+    text-align:center;
+}
+.marcas h2{
+    font-size:45px;
+    margin-bottom:50px;
+}
+.contenedorMarcas{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:50px;
+    margin-top:20px;
+}
+.marca{
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.catalogo{
+    max-width:1200px;
+    margin:0 auto;
+    padding:40px 20px 80px;
+    text-align:center;
+}
+.catalogo h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+.catalogo p{
+    margin-bottom:30px;
+    font-size:18px;
+}
+.buscador{
+    width:350px;
+    max-width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:40px;
+}
+.productos{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+.producto{
+    width:280px;
+    background:#1b1b1b;
+    border-radius:10px;
+    padding:20px;
+    transition:.3s;
+}
+.producto:hover{
+    transform:translateY(-8px);
+}
+.producto img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:8px;
+    display:block;
+}
+.producto h3{
+    margin-top:15px;
+    margin-bottom:10px;
+}
+.producto p{
+    color:#ccc;
+    margin-bottom:10px;
+}
+
+.producto span{
+    display:block;
+    margin-bottom:15px;
+    color:#C1121F;
+    font-size:22px;
+    font-weight:bold;
+}
+footer{
+    background:#000;
+    text-align:center;
+    padding:40px 20px;
+}
+.carrito-container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+}
+.item-carrito{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#1f1f1f;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+}
+.item-carrito img{
+    width:170px;
+    border-radius:10px;
+}
+.imagen{
+    flex:1;
+}
+.info{
+    flex:3;
+    color:white;
+    padding-left:30px;
+}
+.info h2{
+    margin-bottom:15px;
+}
+.info p{
+    margin:8px 0;
+}
+.acciones{
+    flex:1;
+    text-align:right;
+}
+.total-carrito{
+    margin-top:40px;
+    text-align:right;
+    color:white;
+}
+.total-carrito h2{
+    margin-bottom:20px;
+}
+.botones-carrito{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:20px;
+}
+.cantidad{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.btn-cantidad{
+    width:35px;
+    height:35px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:red;
+    color:black;
+    text-decoration:none;
+    border-radius:50%;
+    font-size:22px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-cantidad:hover{
+    background:red;
+    transform:scale(1.08);
+}
+
+.cantidad span{
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    min-width:25px;
+    text-align:center;
+}

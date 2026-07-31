@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block contenido %}
+<section class="catalogo">
+    <h1>Catálogo</h1>
+    <input type="text"
+           class="buscador"
+           placeholder="Buscar gorra...">
+    <div class="productos">
+        {% for producto in productos %}
+        <div class="producto">
+            <img src="{{ url_for('static',
+            filename='img/' + producto.imagen) }}"
+            alt="{{ producto.modelo }}">
+            <h3>{{ producto.modelo }}</h3>
+            <p>Disponible</p>
+            <span>${{ producto.precio }}</span>
+            <a href="{{ url_for('producto', id_producto=producto.id_producto) }}" class="boton">
+            Ver producto
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

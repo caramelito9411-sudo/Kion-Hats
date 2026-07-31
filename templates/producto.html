@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block contenido %}
+<section class="catalogo">
+    <div class="producto" style="max-width:500px; margin:auto;">
+        <img src="{{ url_for('static', filename='img/' + producto.imagen) }}"
+             alt="{{ producto.modelo }}">
+        <h2>{{ producto.modelo }}</h2>
+        <p><strong>Marca:</strong> {{ producto.marca }}</p>
+        <h3 style="color:#C1121F; margin:20px 0;">
+            ${{ producto.precio }}
+        </h3>
+        <p>
+            {{ producto.descripcion }}
+        </p>
+        <p>
+            <strong>Disponibles:</strong>
+            {{ producto.stock }}
+        </p>
+        <a href="{{ url_for('agregar_carrito', id_producto=producto.id_producto) }}"
+   class="boton">
+    Agregar al carrito
+</a>
+        <br><br>
+        <a href="{{ url_for('catalogo') }}" class="boton">
+            ← Volver al catálogo
+        </a>
+    </div>
+</section>
+{% endblock %}

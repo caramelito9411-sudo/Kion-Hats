@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block contenido %}
+<h2>Agregar nueva gorra</h2>
+<form method="POST">
+<label>Modelo</label><br>
+<input type="text" name="modelo" required><br><br>
+<label>Descripción</label><br>
+<textarea name="descripcion"></textarea><br><br>
+<label>Precio</label><br>
+<input type="number" step="0.01" name="precio" required><br><br>
+<label>Stock</label><br>
+<input type="number" name="stock" required><br><br>
+<label>Imagen</label><br>
+<input type="text" name="imagen"><br><br>
+<label>Marca</label><br>
+<select name="id_marca">
+{% for marca in marcas %}
+<option value="{{ marca.id_marca }}">
+{{ marca.nombre }}
+</option>
+{% endfor %}
+</select>
+<br><br>
+<button type="submit">Guardar</button>
+</form>
+{% endblock %}

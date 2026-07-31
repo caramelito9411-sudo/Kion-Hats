@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block contenido %}
+<h2>Mis pedidos</h2>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID Pedido</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Estado</th>
+    </tr>
+    {% for pedido in pedidos %}
+    <tr>
+        <td>{{ pedido.id_pedido }}</td>
+        <td>{{ pedido.fecha }}</td>
+        <td>${{ pedido.total }}</td>
+        <td>{{ pedido.estado }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

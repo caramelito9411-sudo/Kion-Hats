@@ -1,0 +1,1 @@
+console.log("Kion Hats iniciado correctamente.");
